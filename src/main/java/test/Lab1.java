@@ -35,7 +35,7 @@ public class Lab1 {
         for (int k = 2; ; k++) {
             sum += member;
             member = progMember(k, member);
-            System.out.println(sum);
+            System.out.println("k = " + (k - 1) + ". Sum = " + sum);
             if (Math.abs(member) < t)
                 break;
         }
