@@ -17,15 +17,17 @@ public class Lab1 {
     }
 
     public static void main(String[] args) {
-        check_args(args);
+        checkArgs(args);
         String arg1 = args[0];
         String arg2 = args[1];
-
 
         double x = parseDouble(arg1, 0);
         double t = parseDouble(arg2, 0.00000000000001);
 
+        rowSum(x, t);
+    }
 
+    static void rowSum(double x, double t) {
         double sum = 0;
 
         double member = (x * x * Math.pow(4, 6)) / (fact(3) * Math.pow(3, 6));
@@ -37,11 +39,9 @@ public class Lab1 {
             if (Math.abs(member) < t)
                 break;
         }
-
-
     }
 
-    private static double parseDouble(String value, double default_value) {
+    static double parseDouble(String value, double default_value) {
         try {
             return Double.parseDouble(value);
         } catch (Exception e) {
@@ -49,7 +49,7 @@ public class Lab1 {
         }
     }
 
-    private static void check_args(String[] args) {
+    private static void checkArgs(String[] args) {
         if (args.length != 2)
             throw new RuntimeException("Wrong argument count ");
     }
